@@ -21,3 +21,23 @@ body {
     display: flex;
     flex-wrap: wrap;
 }
+
+#board div {
+    width: 180px;
+    height: 180px;
+    background-image: url("./pipe.png");
+    background-size: cover;
+}
+
+#board div img {
+    /* imgs inside each game tile */
+    width: 100px;
+    height: 100px;
+
+    /* make unclickable and undraggable */
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
