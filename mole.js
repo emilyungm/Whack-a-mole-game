@@ -20,8 +20,8 @@ function setGame() {
         document.getElementById("board").appendChild(tile);
     }
 
-    setInterval(setMole, 1000); 
-    setInterval(setPlant, 2000); 
+    setInterval(setMole, 750); 
+    setInterval(setPlant, 1000); 
 
 }
 
@@ -30,6 +30,7 @@ function selectTile() {
         return;
     }
     if (this === currMoleTile) {
+        currMoleTile.innerHTML = "";
         score += 10;
         document.getElementById("score").innerHTML = score.toString();
     } else if (this === currPlantTile) {
@@ -80,9 +81,12 @@ function setPlant() {
     plant.src = "piranha-plant.png";
 
     let num = getRandomTile();
+
     if (currMoleTile && currMoleTile.id === num) {
         return;
     }
     currPlantTile = document.getElementById(num);
     currPlantTile.appendChild(plant);
+    
+    
 }
